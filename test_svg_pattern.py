@@ -94,6 +94,10 @@ class ForkDocsTests(unittest.TestCase):
         text = (Path(__file__).resolve().parent / "OFL.txt").read_text(encoding="utf-8")
         self.assertIn("fork of Noto Sans", text)
         self.assertIn("Ro Zero", text)
+        self.assertIn("Noto Sans KR", text)
+        self.assertIn("Korean Hangul", text)
+        self.assertNotIn("Arabic", text)
+        self.assertNotIn("Devanagari", text)
         self.assertNotIn('Reserved Font Name "Noto"', text)
 
     def test_readme_and_description_name_the_fork(self) -> None:
@@ -111,15 +115,20 @@ class ForkDocsTests(unittest.TestCase):
         self.assertTrue(keep_code(ord("가")))
         self.assertTrue(keep_code(ord("!")))
         self.assertTrue(keep_code(0x20A9))  # won
+        self.assertTrue(keep_code(0xFF01))  # fullwidth exclamation
         self.assertFalse(keep_code(ord("あ")))
         self.assertFalse(keep_code(ord("一")))
         self.assertFalse(keep_code(ord("א")))
+        self.assertFalse(keep_code(0xFF71))  # halfwidth katakana A
 
     def test_noto_sources_live_under_fonts_noto(self) -> None:
         from type_shatter import FONTS
 
         self.assertEqual(FONTS.name, "noto")
         self.assertTrue((FONTS / "NotoSans-Variable.ttf").exists())
+        self.assertTrue((FONTS / "NotoSansKR[wght].ttf").exists())
+        unused = list(FONTS.glob("NotoSansJP*")) + list(FONTS.glob("NotoSansArabic*"))
+        self.assertEqual(unused, [])
 
 
 if __name__ == "__main__":

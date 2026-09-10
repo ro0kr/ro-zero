@@ -22,6 +22,10 @@ radius measured from Noto Sans Black 900.
 Shipped fonts cover Korean Hangul, English/Latin, and punctuation/symbols.
 They do not ship CJK ideographs, kana, Arabic, Hebrew, Thai, or Indic.
 
+Upstream sources used for this Modified Version are Noto Sans, Noto Sans KR,
+and Noto Sans Symbols. Japanese, Simplified Chinese, Arabic, Hebrew, Thai,
+and Devanagari Noto fonts are not used.
+
 The family name is "Ro Zero". It does not use the name "Noto".
 "Noto" is a trademark of Google LLC.
 
@@ -33,7 +37,7 @@ uses Bold 700.
 Upstream
 ----------------------------------------------------------------------
 
-Original Version: Noto Sans and related Noto Sans script fonts
+Original Version: Noto Sans, Noto Sans KR, Noto Sans Symbols
 https://github.com/notofonts
 https://github.com/google/fonts
 
@@ -43,6 +47,11 @@ https://github.com/ro0kr/ro-zero
 
 ChangeLog
 ----------------------------------------------------------------------
+
+10 September 2026 (The Ro Zero Project Authors)
+- Restrict sources and license to Noto Sans, Noto Sans KR, and Noto Sans Symbols
+- Drop unused JP / SC / Arabic / Hebrew / Thai / Devanagari upstream files
+- Keep shipped coverage to Korean + English + punctuation; drop halfwidth kana
 
 10 September 2026 (The Ro Zero Project Authors)
 - Initial release of Ro Zero as a fork / Modified Version of Noto Sans
@@ -56,7 +65,7 @@ Acknowledgements
 ----------------------------------------------------------------------
 
 Noto Sans was designed by Monotype and Google as part of the Noto
-project. Ro Zero keeps Noto’s metrics and glyph set as the starting
-outlines, then replaces the filled shapes with shattered shards.
+project. Ro Zero keeps Noto’s metrics and Hangul/Latin/punctuation outlines as the
+starting shapes, then replaces the filled shapes with shattered shards.
 
 If you make modifications, add a changelog entry here.

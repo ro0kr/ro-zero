@@ -12,12 +12,6 @@ outputDir: ../fonts/ttf
 sources:
   - ../fonts/noto/NotoSans-Variable.ttf
   - ../fonts/noto/NotoSansKR[wght].ttf
-  - ../fonts/noto/NotoSansJP[wght].ttf
-  - ../fonts/noto/NotoSansSC[wght].ttf
-  - ../fonts/noto/NotoSansArabic[wdth,wght].ttf
-  - ../fonts/noto/NotoSansHebrew[wdth,wght].ttf
-  - ../fonts/noto/NotoSansThai[wdth,wght].ttf
-  - ../fonts/noto/NotoSansDevanagari[wdth,wght].ttf
   - ../fonts/noto/NotoSansSymbols-Variable.ttf
   - ../fonts/noto/NotoSansSymbols2-Regular.ttf
 weights:
@@ -31,5 +25,6 @@ weights:
   - { value: 800, style: ExtraBold }
   - { value: 900, style: Black }
 notes: >
-  Fork / Modified Version of Noto Sans (OFL 1.1). Family name is Ro Zero.
-  Does not use the name Noto.
+  Fork / Modified Version of Noto Sans and Noto Sans KR (OFL 1.1).
+  Family name is Ro Zero. Does not use the name Noto.
+  Coverage is Korean Hangul, English/Latin, and punctuation/symbols.

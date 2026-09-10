@@ -28,7 +28,7 @@ Test line (Bold 700): `가나다라 abcd 1234`
 - Copyright 2026 The Ro Zero Project Authors (https://github.com/ro0kr/ro-zero)
 - Copyright 2015–2022 Google LLC, The Noto Project Authors
 
-This is a Modified Version of Noto Sans. Shipped files cover Hangul, Latin, and punctuation/symbols. See [FONTLOG.txt](FONTLOG.txt), [NOTICE.md](NOTICE.md), and [TRADEMARKS.md](TRADEMARKS.md).
+This is a Modified Version of Noto Sans and Noto Sans KR. Shipped files cover Hangul, Latin, and punctuation/symbols. See [FONTLOG.txt](FONTLOG.txt), [NOTICE.md](NOTICE.md), and [TRADEMARKS.md](TRADEMARKS.md).
 
 There is no Reserved Font Name on “Ro Zero”.
 
@@ -63,7 +63,7 @@ bash sources/build.sh
 
 `build.sh` runs `python3 build_font.py --family`, writes `fonts/ttf/RoZero-*.ttf`, and zips them as `downloads/ro-zero-100-900.zip`.
 
-TTF files are large (about 58–96 MB each). Git LFS tracks `fonts/ttf/*.ttf`.
+TTF files are about 17–27 MB each after the Korean + English + punctuation subset. Git LFS tracks `fonts/ttf/*.ttf`.
 
 ## Preview
 

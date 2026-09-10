@@ -21,7 +21,9 @@ _RANGES: tuple[tuple[int, int], ...] = (
     (0xA960, 0xA97F),  # Hangul Jamo Extended-A
     (0xAC00, 0xD7A3),  # Hangul syllables
     (0xD7B0, 0xD7FF),  # Hangul Jamo Extended-B
-    (0xFF00, 0xFFEF),  # halfwidth / fullwidth forms
+    (0xFF00, 0xFF65),  # fullwidth ASCII / punct (not halfwidth kana)
+    (0xFFA0, 0xFFDC),  # halfwidth Hangul
+    (0xFFE0, 0xFFEF),  # fullwidth symbols
 )
 
 

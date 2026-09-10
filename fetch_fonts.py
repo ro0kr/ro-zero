@@ -1,4 +1,4 @@
-"""Download unmodified Noto Sans sources. Ro Zero is a fork of these fonts."""
+"""Download unmodified Noto Sans sources used by this fork."""
 
 from __future__ import annotations
 
@@ -9,14 +9,8 @@ FONTS = Path(__file__).resolve().parent / "fonts" / "noto"
 FILES = {
     "NotoSans-Variable.ttf": "https://github.com/google/fonts/raw/main/ofl/notosans/NotoSans%5Bwdth%2Cwght%5D.ttf",
     "NotoSansKR[wght].ttf": "https://github.com/google/fonts/raw/main/ofl/notosanskr/NotoSansKR%5Bwght%5D.ttf",
-    "NotoSansJP[wght].ttf": "https://github.com/google/fonts/raw/main/ofl/notosansjp/NotoSansJP%5Bwght%5D.ttf",
-    "NotoSansSC[wght].ttf": "https://github.com/google/fonts/raw/main/ofl/notosanssc/NotoSansSC%5Bwght%5D.ttf",
     "NotoSansSymbols-Variable.ttf": "https://github.com/google/fonts/raw/main/ofl/notosanssymbols/NotoSansSymbols%5Bwght%5D.ttf",
     "NotoSansSymbols2-Regular.ttf": "https://github.com/google/fonts/raw/main/ofl/notosanssymbols2/NotoSansSymbols2-Regular.ttf",
-    "NotoSansArabic[wdth,wght].ttf": "https://github.com/google/fonts/raw/main/ofl/notosansarabic/NotoSansArabic%5Bwdth%2Cwght%5D.ttf",
-    "NotoSansHebrew[wdth,wght].ttf": "https://github.com/google/fonts/raw/main/ofl/notosanshebrew/NotoSansHebrew%5Bwdth%2Cwght%5D.ttf",
-    "NotoSansThai[wdth,wght].ttf": "https://github.com/google/fonts/raw/main/ofl/notosansthai/NotoSansThai%5Bwdth%2Cwght%5D.ttf",
-    "NotoSansDevanagari[wdth,wght].ttf": "https://github.com/google/fonts/raw/main/ofl/notosansdevanagari/NotoSansDevanagari%5Bwdth%2Cwght%5D.ttf",
 }
 
 

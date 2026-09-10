@@ -298,7 +298,9 @@ def assemble_font(
     )
     fb.setupNameTable(
         {
-            "copyright": "Ro Zero is derived from Noto Sans under the SIL Open Font License 1.1.",
+            "copyright": (
+                "Copyright 2026 The Ro Zero Project Authors (https://github.com/ro0kr/ro-zero)"
+            ),
             "familyName": FAMILY,
             "styleName": style,
             "uniqueFontIdentifier": f"Ro Zero {style}; {weight}; roughness 0; 100 shards; 30% gaps",
@@ -307,7 +309,8 @@ def assemble_font(
             "version": "Version 1.000",
             "manufacturer": "Ro Zero",
             "description": (
-                "Shattered Noto Sans. 100 pieces, 30% crack gaps, roughness 0. "
+                "A fork of Noto Sans and Noto Sans KR. Korean Hangul, English/Latin, "
+                "and punctuation/symbols. 100 shards, 30% crack gaps, roughness 0. "
                 "Seed is the character code. Corner radius from Noto Sans Black 900."
             ),
             "licenseDescription": (
@@ -570,7 +573,8 @@ def write_preview_subset(src: Path, dest: Path, text: str) -> Path:
 OFL_TEXT = """This Font Software is licensed under the SIL Open Font License, Version 1.1.
 This license is available with a FAQ at: https://openfontlicense.org
 
-Ro Zero is derived from Noto Sans (Copyright 2015-2022 Google LLC).
+Ro Zero is a Modified Version of Noto Sans and Noto Sans KR (Copyright 2015-2022 Google LLC).
+Coverage is Korean Hangul, English/Latin, and punctuation/symbols.
 """
 
 

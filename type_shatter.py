@@ -32,7 +32,7 @@ CACHE = ROOT / "cache"
 CACHE.mkdir(exist_ok=True)
 ensure_fonts()
 WEIGHTS = (100, 200, 300, 400, 500, 600, 700, 800, 900)
-FONT_KINDS = ("lgc", "kr", "jp", "sc", "ar", "he", "th", "de", "sym", "sym2")
+FONT_KINDS = ("lgc", "kr", "sym", "sym2")
 QUAD_SEGS = 2  # coarse corner rounding, not a 36-gon
 FONT_SIZE = 96.0
 UPM = 1000.0
@@ -99,12 +99,6 @@ def _base_font(kind: str) -> TTFont:
     mapping = {
         "lgc": "NotoSans-Variable.ttf",
         "kr": "NotoSansKR*.ttf",
-        "jp": "NotoSansJP*.ttf",
-        "sc": "NotoSansSC*.ttf",
-        "ar": "NotoSansArabic*.ttf",
-        "he": "NotoSansHebrew*.ttf",
-        "th": "NotoSansThai*.ttf",
-        "de": "NotoSansDevanagari*.ttf",
         "sym": "NotoSansSymbols-Variable.ttf",
         "sym2": "NotoSansSymbols2-Regular.ttf",
     }
@@ -115,18 +109,6 @@ def _pick_kind(char: str) -> str:
     code = ord(char)
     if 0xAC00 <= code <= 0xD7A3 or 0x1100 <= code <= 0x11FF or 0x3130 <= code <= 0x318F:
         return "kr"
-    if 0x3040 <= code <= 0x30FF or 0x31F0 <= code <= 0x31FF or 0xFF66 <= code <= 0xFF9D:
-        return "jp"
-    if 0x4E00 <= code <= 0x9FFF or 0x3400 <= code <= 0x4DBF:
-        return "sc"
-    if 0x0600 <= code <= 0x06FF or 0x0750 <= code <= 0x077F or 0x08A0 <= code <= 0x08FF:
-        return "ar"
-    if 0x0590 <= code <= 0x05FF:
-        return "he"
-    if 0x0E00 <= code <= 0x0E7F:
-        return "th"
-    if 0x0900 <= code <= 0x097F:
-        return "de"
     if code >= 0x1F000 or 0x2600 <= code <= 0x27BF or 0x2B00 <= code <= 0x2BFF:
         return "sym2"
     if 0x2190 <= code <= 0x22FF or 0x20A0 <= code <= 0x20CF or 0x2100 <= code <= 0x23FF:

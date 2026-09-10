@@ -1,7 +1,7 @@
 Copyright 2026 The Ro Zero Project Authors (https://github.com/ro0kr/ro-zero)
 Copyright 2015-2022 Google LLC, The Noto Project Authors (https://github.com/notofonts/notofonts.github.io)
 
-Ro Zero is a fork of Noto Sans: a Modified Version of Noto Sans (including Noto Sans KR, JP, SC, Arabic, Hebrew, Thai, Devanagari, and Symbols) licensed under the SIL Open Font License, Version 1.1. The Modified Version is named "Ro Zero" and does not use the name "Noto". "Noto" is a trademark of Google LLC.
+Ro Zero is a fork of Noto Sans: a Modified Version of Noto Sans, Noto Sans KR, and Noto Sans Symbols licensed under the SIL Open Font License, Version 1.1. Shipped coverage is Korean Hangul, English/Latin, and punctuation/symbols. The Modified Version is named "Ro Zero" and does not use the name "Noto". "Noto" is a trademark of Google LLC.
 
 This Font Software is licensed under the SIL Open Font License, Version 1.1.
 This license is copied below, and is also available with a FAQ at:
