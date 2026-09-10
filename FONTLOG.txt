@@ -14,18 +14,20 @@ Ro Zero is a fork of Noto Sans (SIL Open Font License 1.1 Modified Version).
 It is not an original typeface family. Outlines start from Noto Sans, then
 each glyph is shattered.
 
-It takes Noto Sans (Latin, Greek, Cyrillic), Noto Sans KR, Noto Sans JP,
-Noto Sans SC, Noto Sans Arabic, Noto Sans Hebrew, Noto Sans Thai,
-Noto Sans Devanagari, and Noto Sans Symbols, then shatters each glyph
-into about 100 stone-like pieces with 30% crack gaps and roughness 0
-(straight cracks). The shatter seed is the character code point. Corner
-rounding uses a radius measured from Noto Sans Black 900.
+It takes Noto Sans outlines, then shatters each glyph into about 100
+stone-like pieces with 30% crack gaps and roughness 0 (straight cracks).
+The shatter seed is the character code point. Corner rounding uses a
+radius measured from Noto Sans Black 900.
+
+Shipped fonts cover Korean Hangul, English/Latin, and punctuation/symbols.
+They do not ship CJK ideographs, kana, Arabic, Hebrew, Thai, or Indic.
 
 The family name is "Ro Zero". It does not use the name "Noto".
 "Noto" is a trademark of Google LLC.
 
 Styles: Thin 100, ExtraLight 200, Light 300, Regular 400, Medium 500,
-SemiBold 600, Bold 700, ExtraBold 800, Black 900.
+SemiBold 600, Bold 700, ExtraBold 800, Black 900. The catalog specimen
+uses Bold 700.
 
 
 Upstream
@@ -47,6 +49,7 @@ ChangeLog
 - Nine static TTF masters, weights 100–900
 - Build pipeline in sources/
 - Google Fonts onboarding files (AUTHORS, CONTRIBUTORS, OFL, FONTLOG, documentation/)
+- Subset shipped fonts to Korean + English + punctuation; specimen uses Bold 700
 
 
 Acknowledgements

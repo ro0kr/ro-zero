@@ -10,7 +10,9 @@ Noto Sans 글자 아웃라인을 파쇄해 만든 디스플레이 패밀리입�
 
 Each glyph is shattered into about 100 stone-like shards with 30% crack gaps. Crack roughness is 0 (straight fractures). The shatter seed is the character code point (`A` is 65). Weight does not change the seed. Corner rounding uses a radius measured from Noto Sans Black 900.
 
-Styles: Thin 100, ExtraLight 200, Light 300, Regular 400, Medium 500, SemiBold 600, Bold 700, ExtraBold 800, Black 900.
+Shipped coverage is **Korean + English + punctuation/symbols**. CJK ideographs and other scripts are not included.
+
+Styles: Thin 100, ExtraLight 200, Light 300, Regular 400, Medium 500, SemiBold 600, Bold 700, ExtraBold 800, Black 900. The specimen uses **Bold 700**.
 
 Upstream sources (unmodified OFL Noto files) live in `fonts/noto/`. Built fonts live in `fonts/ttf/`.
 
@@ -18,7 +20,7 @@ Upstream sources (unmodified OFL Noto files) live in `fonts/noto/`. Built fonts 
 
 ![Ro Zero specimen](documentation/ro-zero-specimen.png)
 
-Test line (Medium 500): `가나다라 abcd 1234`
+Test line (Bold 700): `가나다라 abcd 1234`
 
 ## License
 
@@ -26,7 +28,7 @@ Test line (Medium 500): `가나다라 abcd 1234`
 - Copyright 2026 The Ro Zero Project Authors (https://github.com/ro0kr/ro-zero)
 - Copyright 2015–2022 Google LLC, The Noto Project Authors
 
-This is a Modified Version of Noto Sans (including Noto Sans KR, JP, SC, Arabic, Hebrew, Thai, Devanagari, and Symbols). See [FONTLOG.txt](FONTLOG.txt), [NOTICE.md](NOTICE.md), and [TRADEMARKS.md](TRADEMARKS.md).
+This is a Modified Version of Noto Sans. Shipped files cover Hangul, Latin, and punctuation/symbols. See [FONTLOG.txt](FONTLOG.txt), [NOTICE.md](NOTICE.md), and [TRADEMARKS.md](TRADEMARKS.md).
 
 There is no Reserved Font Name on “Ro Zero”.
 

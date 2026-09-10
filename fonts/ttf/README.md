@@ -2,6 +2,8 @@
 
 Static fonts for the **Ro Zero** family, a fork of Noto Sans.
 
+Coverage: Korean Hangul, English/Latin, and punctuation/symbols.
+
 | File | Weight |
 |---|---|
 | RoZero-Thin.ttf | 100 |
@@ -14,4 +16,4 @@ Static fonts for the **Ro Zero** family, a fork of Noto Sans.
 | RoZero-ExtraBold.ttf | 800 |
 | RoZero-Black.ttf | 900 |
 
-Tracked with Git LFS. Rebuild with `../../sources/build.sh`.
+Specimen uses Bold 700. Tracked with Git LFS. Rebuild with `../../sources/build.sh`.

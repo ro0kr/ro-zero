@@ -1,4 +1,4 @@
-"""Render documentation/ro-zero-specimen.png from Ro Zero Medium."""
+"""Render documentation/ro-zero-specimen.png from Ro Zero Bold."""
 
 from __future__ import annotations
 
@@ -7,7 +7,7 @@ from pathlib import Path
 from PIL import Image, ImageDraw, ImageFont
 
 ROOT = Path(__file__).resolve().parent.parent
-FONT = ROOT / "fonts" / "ttf" / "RoZero-Medium.ttf"
+FONT = ROOT / "fonts" / "ttf" / "RoZero-Bold.ttf"
 OUT = Path(__file__).resolve().parent / "ro-zero-specimen.png"
 
 
@@ -22,7 +22,7 @@ def main() -> None:
     draw.text((72, 320), "가나다라 abcd 1234", font=font_line, fill="#111111")
     draw.text(
         (72, 500),
-        "A fork of Noto Sans  ·  Noto Sans 포크  ·  Medium 500",
+        "A fork of Noto Sans  ·  Noto Sans 포크  ·  Bold 700",
         font=font_caption,
         fill="#5c584f",
     )

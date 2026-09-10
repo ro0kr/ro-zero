@@ -104,6 +104,17 @@ class ForkDocsTests(unittest.TestCase):
         self.assertIn("Noto Sans", readme)
         self.assertIn("fork of Noto Sans", desc)
 
+    def test_coverage_keeps_korean_english_punct(self) -> None:
+        from glyph_coverage import keep_code
+
+        self.assertTrue(keep_code(ord("A")))
+        self.assertTrue(keep_code(ord("가")))
+        self.assertTrue(keep_code(ord("!")))
+        self.assertTrue(keep_code(0x20A9))  # won
+        self.assertFalse(keep_code(ord("あ")))
+        self.assertFalse(keep_code(ord("一")))
+        self.assertFalse(keep_code(ord("א")))
+
     def test_noto_sources_live_under_fonts_noto(self) -> None:
         from type_shatter import FONTS
 

@@ -19,6 +19,7 @@ from fontTools.ttLib import TTFont, newTable
 from shapely.geometry import Polygon
 from shapely.geometry.polygon import LinearRing
 
+from glyph_coverage import keep_code
 from type_shatter import (
     FONT_KINDS,
     UPM,
@@ -85,7 +86,7 @@ def collect_codepoints() -> list[int]:
             continue
         cmap = font.getBestCmap() or {}
         codes.update(cmap.keys())
-    return sorted(code for code in codes if usable_code(code))
+    return sorted(code for code in codes if usable_code(code) and keep_code(code))
 
 
 def _signed_area(points: list[tuple[int, int]]) -> float:
