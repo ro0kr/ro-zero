@@ -1,0 +1,59 @@
+FONTLOG
+Ro Zero
+======================================================================
+
+This file provides detailed information on the Ro Zero Font Software.
+This information should be distributed along with the Ro Zero fonts
+and any derivative works.
+
+
+Basic Font Information
+----------------------------------------------------------------------
+
+Ro Zero is a fork of Noto Sans (SIL Open Font License 1.1 Modified Version).
+It is not an original typeface family. Outlines start from Noto Sans, then
+each glyph is shattered.
+
+It takes Noto Sans (Latin, Greek, Cyrillic), Noto Sans KR, Noto Sans JP,
+Noto Sans SC, Noto Sans Arabic, Noto Sans Hebrew, Noto Sans Thai,
+Noto Sans Devanagari, and Noto Sans Symbols, then shatters each glyph
+into about 100 stone-like pieces with 30% crack gaps and roughness 0
+(straight cracks). The shatter seed is the character code point. Corner
+rounding uses a radius measured from Noto Sans Black 900.
+
+The family name is "Ro Zero". It does not use the name "Noto".
+"Noto" is a trademark of Google LLC.
+
+Styles: Thin 100, ExtraLight 200, Light 300, Regular 400, Medium 500,
+SemiBold 600, Bold 700, ExtraBold 800, Black 900.
+
+
+Upstream
+----------------------------------------------------------------------
+
+Original Version: Noto Sans and related Noto Sans script fonts
+https://github.com/notofonts
+https://github.com/google/fonts
+
+Modified Version: Ro Zero
+https://github.com/ro0kr/ro-zero
+
+
+ChangeLog
+----------------------------------------------------------------------
+
+10 September 2026 (The Ro Zero Project Authors)
+- Initial release of Ro Zero as a fork / Modified Version of Noto Sans
+- Nine static TTF masters, weights 100–900
+- Build pipeline in sources/
+- Google Fonts onboarding files (AUTHORS, CONTRIBUTORS, OFL, FONTLOG, documentation/)
+
+
+Acknowledgements
+----------------------------------------------------------------------
+
+Noto Sans was designed by Monotype and Google as part of the Noto
+project. Ro Zero keeps Noto’s metrics and glyph set as the starting
+outlines, then replaces the filled shapes with shattered shards.
+
+If you make modifications, add a changelog entry here.

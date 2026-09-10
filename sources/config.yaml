@@ -1,0 +1,35 @@
+# Ro Zero is a fork of Noto Sans.
+# Built with Python (build_font.py), not fontmake from UFO/Glyphs masters.
+
+familyName: Ro Zero
+buildVariable: false
+recipe:
+  tool: python
+  script: ../build_font.py
+  args:
+    - --family
+outputDir: ../fonts/ttf
+sources:
+  - ../fonts/noto/NotoSans-Variable.ttf
+  - ../fonts/noto/NotoSansKR[wght].ttf
+  - ../fonts/noto/NotoSansJP[wght].ttf
+  - ../fonts/noto/NotoSansSC[wght].ttf
+  - ../fonts/noto/NotoSansArabic[wdth,wght].ttf
+  - ../fonts/noto/NotoSansHebrew[wdth,wght].ttf
+  - ../fonts/noto/NotoSansThai[wdth,wght].ttf
+  - ../fonts/noto/NotoSansDevanagari[wdth,wght].ttf
+  - ../fonts/noto/NotoSansSymbols-Variable.ttf
+  - ../fonts/noto/NotoSansSymbols2-Regular.ttf
+weights:
+  - { value: 100, style: Thin }
+  - { value: 200, style: ExtraLight }
+  - { value: 300, style: Light }
+  - { value: 400, style: Regular }
+  - { value: 500, style: Medium }
+  - { value: 600, style: SemiBold }
+  - { value: 700, style: Bold }
+  - { value: 800, style: ExtraBold }
+  - { value: 900, style: Black }
+notes: >
+  Fork / Modified Version of Noto Sans (OFL 1.1). Family name is Ro Zero.
+  Does not use the name Noto.

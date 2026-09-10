@@ -1,0 +1,6 @@
+# This is the list of people who have contributed to Ro Zero,
+# for documentation purposes.
+# Names should be added to this file as:
+# Name <email address>
+
+The Noto Project Authors

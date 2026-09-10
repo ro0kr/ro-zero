@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ro Zero</title>
+    <style>
+      :root {
+        --bg: #ece8df;
+        --panel: #f7f3ea;
+        --ink: #111;
+        --muted: #5c584f;
+        --line: #d4cfc3;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: "Noto Sans KR", "Noto Sans", sans-serif;
+        background: var(--bg);
+        color: var(--ink);
+      }
+      main {
+        display: grid;
+        grid-template-columns: minmax(260px, 320px) 1fr;
+        min-height: 100vh;
+      }
+      aside {
+        padding: 28px 24px;
+        border-right: 1px solid var(--line);
+        background: var(--panel);
+      }
+      h1 { margin: 0 0 8px; font-size: 22px; letter-spacing: -0.03em; }
+      .lede { margin: 0 0 20px; color: var(--muted); line-height: 1.55; font-size: 14px; }
+      .stats { font-size: 13px; line-height: 1.7; color: var(--muted); }
+      .stats b { color: var(--ink); }
+      .download {
+        display: inline-block;
+        margin: 16px 0 8px;
+        padding: 10px 14px;
+        background: #111;
+        color: #f7f3ea;
+        text-decoration: none;
+        font-size: 14px;
+        border-radius: 6px;
+      }
+      .download[aria-disabled="true"] {
+        pointer-events: none;
+        background: #b7b2a6;
+      }
+      .font-state { font-size: 13px; color: var(--muted); margin: 0 0 8px; }
+      section { padding: 28px 20px 64px; overflow-x: auto; }
+      .weight { margin: 0 0 36px; }
+      .weight h2 {
+        margin: 0 0 10px;
+        font-size: 13px;
+        letter-spacing: 0.04em;
+        color: var(--muted);
+        font-weight: 600;
+      }
+      .weight img { display: block; width: min(1400px, 100%); height: auto; }
+      .wait { color: var(--muted); font-size: 13px; }
+      @media (max-width: 860px) {
+        main { grid-template-columns: 1fr; }
+        aside { border-right: 0; border-bottom: 1px solid var(--line); }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <aside>
+        <h1>Ro Zero</h1>
+        <p class="lede">
+          <b>Noto Sans 포크.</b>
+          Thin 100부터 Black 900까지 각각 TTF로 만든 뒤
+          <b>ro-zero-100-900.zip</b>으로 묶습니다.
+        </p>
+        <div class="stats" id="stats">불러오는 중…</div>
+        <p class="font-state" id="font-state">폰트 상태 확인 중…</p>
+        <a class="download" id="download" href="/download/ro-zero-100-900.zip" download="ro-zero-100-900.zip" aria-disabled="true">zip 다운로드</a>
+      </aside>
+      <section id="board"></section>
+    </main>
+    <script>
+      const names = {
+        100: "Thin 100",
+        200: "ExtraLight 200",
+        300: "Light 300",
+        400: "Regular 400",
+        500: "Medium 500",
+        600: "SemiBold 600",
+        700: "Bold 700",
+        800: "ExtraBold 800",
+        900: "Black 900",
+      };
+      const board = document.getElementById("board");
+      const download = document.getElementById("download");
+
+      async function meta() {
+        const res = await fetch("/meta");
+        const data = await res.json();
+        document.getElementById("stats").innerHTML = `
+          <div>파쇄 <b>${data.pieces}</b>조각 · 깨진 비율 <b>${Math.round(data.white_ratio * 100)}%</b></div>
+          <div>거칠기 <b>${Math.round(data.roughness * 100)}</b></div>
+          <div>R <b>${data.radius}</b> · Black 900 기준</div>
+          <div>굵기 <b>100–900</b> · zip 9개 TTF</div>
+        `;
+      }
+
+      function addWeight(weight) {
+        const wrap = document.createElement("div");
+        wrap.className = "weight";
+        wrap.innerHTML = `<h2>${names[weight]} · 가나다라 abcd 1234</h2><p class="wait">깨는 중…</p>`;
+        board.appendChild(wrap);
+        const img = new Image();
+        img.alt = names[weight];
+        img.onload = () => wrap.querySelector(".wait").replaceWith(img);
+        img.onerror = () => {
+          wrap.querySelector(".wait").textContent = "이 굵기를 만들지 못했습니다.";
+        };
+        img.src = `/weight/${weight}.svg`;
+      }
+
+      async function fontStatus() {
+        const res = await fetch("/font-status");
+        const data = await res.json();
+        const el = document.getElementById("font-state");
+        if (data.state === "ready" && (data.download || "").includes("zip")) {
+          const mb = (data.bytes / 1024 / 1024).toFixed(1);
+          el.textContent = `준비됨 · ${data.fonts.length}개 TTF · ${mb}MB zip`;
+          download.removeAttribute("aria-disabled");
+          return true;
+        }
+        if (data.state === "building" || data.state === "compiling") {
+          const style = data.style ? `${data.style} ${data.weight}` : "";
+          const progress = data.weights_done != null
+            ? `굵기 ${data.weights_done}/${data.weights_total} · ${style}`
+            : style;
+          el.textContent = data.state === "compiling"
+            ? `${style} TrueType으로 묶는 중…`
+            : `만드는 중 ${progress} · ${data.done || 0}/${data.total || "?"}`;
+          return false;
+        }
+        el.textContent = "zip을 만드는 중…";
+        return false;
+      }
+
+      meta();
+      for (const weight of [100, 200, 300, 400, 500, 600, 700, 800, 900]) addWeight(weight);
+      fontStatus().then((ready) => {
+        if (!ready) {
+          const timer = setInterval(async () => {
+            if (await fontStatus()) clearInterval(timer);
+          }, 2000);
+        }
+      });
+    </script>
+  </body>
+</html>

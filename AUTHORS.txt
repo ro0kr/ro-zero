@@ -1,0 +1,9 @@
+# This is the list of copyright holders of Ro Zero for copyright purposes.
+# Contributors who are not copyright authors belong in CONTRIBUTORS.txt.
+#
+# Names should be added to this file as:
+# Name or Organization <email address>
+
+The Ro Zero Project Authors
+Google LLC
+The Noto Project Authors
