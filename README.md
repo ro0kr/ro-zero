@@ -49,6 +49,12 @@ fonts/
   ttf/           # Ro Zero Thin–Black
 sources/
   build.sh
+  build_font.py
+  type_shatter.py
+  svg_pattern.py
+  fetch_fonts.py
+  glyph_coverage.py
+  subset_kr_en.py
   config.yaml
 requirements.txt
 ```
@@ -57,11 +63,10 @@ requirements.txt
 
 ```bash
 python3 -m pip install -r requirements.txt
-python3 fetch_fonts.py
 bash sources/build.sh
 ```
 
-`build.sh` runs `python3 build_font.py --family`, writes `fonts/ttf/RoZero-*.ttf`, and zips them as `downloads/ro-zero-100-900.zip`.
+`sources/build.sh` fetches Noto, runs `sources/build_font.py --family`, writes `fonts/ttf/RoZero-*.ttf`, and zips them as `downloads/ro-zero-100-900.zip`.
 
 TTF files are about 17–27 MB each after the Korean + English + punctuation subset. Git LFS tracks `fonts/ttf/*.ttf`.
 

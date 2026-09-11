@@ -9,7 +9,7 @@ from fontTools.subset import Options, Subsetter
 from fontTools.ttLib import TTFont
 
 ROOT = Path(__file__).resolve().parent.parent
-sys.path.insert(0, str(ROOT))
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from glyph_coverage import keep_code
 

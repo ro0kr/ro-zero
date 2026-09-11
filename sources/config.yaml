@@ -5,7 +5,7 @@ familyName: Ro Zero
 buildVariable: false
 recipe:
   tool: python
-  script: ../build_font.py
+  script: build_font.py
   args:
     - --family
 outputDir: ../fonts/ttf

@@ -3,9 +3,12 @@
 from __future__ import annotations
 
 import json
+import sys
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from urllib.parse import urlparse
+
+sys.path.insert(0, str(Path(__file__).resolve().parent / "sources"))
 
 from svg_pattern import DEFAULT_PIECES, DEFAULT_ROUGHNESS, DEFAULT_WHITE_RATIO, char_seed
 from type_shatter import FONT_SIZE, WEIGHTS, black900_radius, render_weight_svg

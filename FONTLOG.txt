@@ -48,6 +48,10 @@ https://github.com/ro0kr/ro-zero
 ChangeLog
 ----------------------------------------------------------------------
 
+11 September 2026 (The Ro Zero Project Authors)
+- Keep the shatter/build scripts in sources/ (build_font.py, type_shatter.py,
+  svg_pattern.py, fetch_fonts.py, glyph_coverage.py)
+
 10 September 2026 (The Ro Zero Project Authors)
 - Restrict sources and license to Noto Sans, Noto Sans KR, and Noto Sans Symbols
 - Drop unused JP / SC / Arabic / Hebrew / Thai / Devanagari upstream files

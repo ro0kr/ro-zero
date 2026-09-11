@@ -1,9 +1,12 @@
+import sys
 import tempfile
 import unittest
 import zipfile
 from pathlib import Path
 
 from fontTools.ttLib import TTFont
+
+sys.path.insert(0, str(Path(__file__).resolve().parent / "sources"))
 
 from build_font import build_ro_zero_font
 from svg_pattern import PatternConfig, build_fracture, char_seed
@@ -99,6 +102,25 @@ class ForkDocsTests(unittest.TestCase):
         self.assertNotIn("Arabic", text)
         self.assertNotIn("Devanagari", text)
         self.assertNotIn('Reserved Font Name "Noto"', text)
+
+    def test_pipeline_scripts_live_in_sources(self) -> None:
+        folder = Path(__file__).resolve().parent / "sources"
+        for name in (
+            "build.sh",
+            "build_font.py",
+            "type_shatter.py",
+            "svg_pattern.py",
+            "fetch_fonts.py",
+            "glyph_coverage.py",
+            "subset_kr_en.py",
+            "config.yaml",
+            "README.md",
+        ):
+            self.assertTrue((folder / name).is_file(), name)
+        readme = (folder / "README.md").read_text(encoding="utf-8")
+        self.assertIn("build_font.py", readme)
+        self.assertIn("type_shatter.py", readme)
+        self.assertIn("svg_pattern.py", readme)
 
     def test_readme_and_description_name_the_fork(self) -> None:
         root = Path(__file__).resolve().parent

@@ -5,7 +5,8 @@ from __future__ import annotations
 import urllib.request
 from pathlib import Path
 
-FONTS = Path(__file__).resolve().parent / "fonts" / "noto"
+ROOT = Path(__file__).resolve().parent.parent
+FONTS = ROOT / "fonts" / "noto"
 FILES = {
     "NotoSans-Variable.ttf": "https://github.com/google/fonts/raw/main/ofl/notosans/NotoSans%5Bwdth%2Cwght%5D.ttf",
     "NotoSansKR[wght].ttf": "https://github.com/google/fonts/raw/main/ofl/notosanskr/NotoSansKR%5Bwght%5D.ttf",

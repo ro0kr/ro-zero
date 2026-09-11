@@ -26,7 +26,7 @@ from svg_pattern import (
     char_seed,
 )
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parent.parent
 FONTS = ROOT / "fonts" / "noto"
 CACHE = ROOT / "cache"
 CACHE.mkdir(exist_ok=True)

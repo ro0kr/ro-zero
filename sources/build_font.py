@@ -28,7 +28,7 @@ from type_shatter import (
     shatter_glyph_em,
 )
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parent.parent
 DOWNLOADS = ROOT / "downloads"
 USER_DOWNLOADS = Path.home() / "Downloads"
 USER_DESKTOP = Path.home() / "Desktop"

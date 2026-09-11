@@ -10,5 +10,5 @@ Ro Zero is a Modified Version / fork. Do not ship these files as Ro Zero.
 Built Ro Zero binaries are in `../ttf/`. Japanese, Simplified Chinese, Arabic,
 Hebrew, Thai, and Devanagari Noto fonts are not used.
 
-Downloaded by `../../fetch_fonts.py` from the Google Fonts GitHub mirror.
+Downloaded by `../../sources/fetch_fonts.py` from the Google Fonts GitHub mirror.
 Licensed under the SIL Open Font License 1.1. See `../../OFL.txt`.

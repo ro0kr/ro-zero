@@ -2,10 +2,19 @@
 
 Ro Zero is a **fork of Noto Sans**, not a from-scratch drawing.
 
-- Upstream (unmodified): `../fonts/noto/`
-- Shatter + TTF compile: `../build_font.py`, `../type_shatter.py`, `../svg_pattern.py`
-- Config: `config.yaml`
-- Build: `./build.sh`
+This folder is the font source. There are no UFO or Glyphs masters.
+The starting outlines are the unmodified Noto Sans TTFs in `../fonts/noto/`.
+The Modified Version is built here:
 
-There are no UFO or Glyphs masters. The “source” outlines are Noto Sans
-variable TTFs. The Modified Version replaces each glyph with shattered shards.
+- `fetch_fonts.py` — download unmodified Noto Sans / KR / Symbols
+- `type_shatter.py` — shatter each glyph (seed = character code)
+- `svg_pattern.py` — crack mesh
+- `glyph_coverage.py` — Korean + English + punctuation keep-list
+- `build_font.py` — compile Ro Zero TTFs
+- `subset_kr_en.py` — subset shipped fonts
+- `config.yaml` — family recipe
+- `build.sh` — one-command build
+
+```bash
+./build.sh
+```
